@@ -68,9 +68,13 @@ betterAltsBtn.addEventListener("click", async() =>{
             function: () => {
                 let imgs = document.getElementsByTagName("img");
                 for (var i = 0; i < imgs.length; i++){
-                    alert(imgs[i].src);
+                    azureVision(imgs[i].src);
                 }
             }
         })
     }
 })
+
+function azureVision(){
+
+}
