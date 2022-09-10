@@ -1,17 +1,14 @@
 {
     JSON IS NOT ALLOWED TO HAVE COMMETS. DO THEM IN HERE  >:)
-    
+
     "manifest_version": 3,
     "name": "BetterBrowse",
     "version": "1.0",
   
-    // Recommended
     //"action": {...}, this allows users to pin the extension
-    //"default_locale": "en", is required in extensions that have a _locales
     "description": "An extension that helps makes a website more accessible for all users",
     //"icons": {...},
   
-    // Optional
     "background": { //monitor events such as navigating to a new page, removing bookmars, or closing a tab
       // Required
       "service_worker": "background.js",
