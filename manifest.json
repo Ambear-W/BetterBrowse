@@ -3,15 +3,26 @@
     "name": "BetterBrowse",
     "version": "0.1",
     "description": "An extension that helps makes a website more accessible for all users",
-    "background": { 
-      "service_worker": "background.js"
+    "action": {
+        "default_popup": "popup/popup.html",
+        "default_icon": "images/testicon.png"
     },
+    "content_scripts" : [
+        {
+            "matches" : [
+                "<all_urls>"
+            ],
+            "js": ["content.js"]
+        }
+    ],
     "devtools_page": "devtools.html",
     "homepage_url": "https://path/to/homepage",
     "incognito": "spanning",
     "offline_enabled": true,
-    "permissions": ["tabs"],
-    "tts_engine": {...},
-    "version_name": "Getting Started!",
-    "web_accessible_resources": [...]
+    "permissions": [
+        "tabs",
+        "activeTab",
+        "scripting",
+        "storage"],
+    "version_name": "Getting Started!"
   }
