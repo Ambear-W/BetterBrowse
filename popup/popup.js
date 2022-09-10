@@ -57,3 +57,20 @@ readableBtn.addEventListener("click", async() =>{
         readableOn = false;
     }
 })
+
+let betterAltsBtn = document.getElementById("betterAlts")
+var betterAlts = false;
+betterAltsBtn.addEventListener("click", async() =>{
+    let [tab] = await chrome.tabs.query({active: true, currentWindow:true})
+    if(betterAlts == false){
+        chrome.scripting.executeScript({
+            target: {tabId: tab.id},
+            function: () => {
+                let imgs = document.getElementsByTagName("img");
+                for (var i = 0; i < imgs.length; i++){
+                    alert(imgs[i].src);
+                }
+            }
+        })
+    }
+})
