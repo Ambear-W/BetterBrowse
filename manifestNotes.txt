@@ -1,0 +1,30 @@
+{
+    JSON IS NOT ALLOWED TO HAVE COMMETS. DO THEM IN HERE  >:)
+    
+    "manifest_version": 3,
+    "name": "BetterBrowse",
+    "version": "1.0",
+  
+    // Recommended
+    //"action": {...}, this allows users to pin the extension
+    //"default_locale": "en", is required in extensions that have a _locales
+    "description": "An extension that helps makes a website more accessible for all users",
+    //"icons": {...},
+  
+    // Optional
+    "background": { //monitor events such as navigating to a new page, removing bookmars, or closing a tab
+      // Required
+      "service_worker": "background.js",
+    },
+   
+    "devtools_page": "devtools.html", //can add new UI panels and sidebars, interact witht he inspected page, get informationa bout network requests and more (API)
+
+    "incognito": "spanning", //how it behaves in incognito - spanning -> extension will run in a single shared process
+   
+    "offline_enabled": true, //no info on it :( but might be important
+    
+    "tts_engine": {...}, //allows test to speed engine using an extension, can use any available web technology to synthesize and ouput the speed, and send events back to the calling function to report the status
+
+    "version_name": "aString", //more description to the version!! 
+    "web_accessible_resources": [...] //accessibilty!!
+  }

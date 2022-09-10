@@ -1,0 +1,17 @@
+{
+    "manifest_version": 3,
+    "name": "BetterBrowse",
+    "version": "0.1",
+    "description": "An extension that helps makes a website more accessible for all users",
+    "background": { 
+      "service_worker": "background.js"
+    },
+    "devtools_page": "devtools.html",
+    "homepage_url": "https://path/to/homepage",
+    "incognito": "spanning",
+    "offline_enabled": true,
+    "permissions": ["tabs"],
+    "tts_engine": {...},
+    "version_name": "Getting Started!",
+    "web_accessible_resources": [...]
+  }
