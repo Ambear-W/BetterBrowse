@@ -1,11 +1,8 @@
-// Snag our button
-let btn = document.getElementById("dyslexicFriendly")
+let dylexicBtn = document.getElementById("dyslexicFriendly")
 var dyslexicOn = false;
-// Run on click
-btn.addEventListener("click", async () => {
+dylexicBtn.addEventListener("click", async () => {
     let [tab] = await chrome.tabs.query({active: true, currentWindow:true}) // Find current tab
     if(dyslexicOn == false){ //we want to make it into a friendly font
-        alert("Its not on! Lets turn it on~!")
         chrome.scripting.executeScript({ // Run the following script on our tab
             target: {tabId: tab.id},
             function: () => {
@@ -16,8 +13,8 @@ btn.addEventListener("click", async () => {
             }
         })
         dyslexicOn = true;
+        readableOn = false;
     }else{ //want to turn off friendly font
-        alert("In here!");
         chrome.scripting.executeScript({ 
             target: {tabId: tab.id},
             function: () => {
@@ -28,5 +25,35 @@ btn.addEventListener("click", async () => {
             }
         })
         dyslexicOn = false;
+    }
+})
+
+let readableBtn = document.getElementById("readableFont")
+var readableOn = false;
+readableBtn.addEventListener("click", async() =>{
+    let [tab] = await chrome.tabs.query({active: true, currentWindow:true}) // Find current tab
+    if(readableOn == false){ //we want to make it into a friendly font
+        chrome.scripting.executeScript({ // Run the following script on our tab
+            target: {tabId: tab.id},
+            function: () => {
+                let elems = document.querySelectorAll("*"); // Grab every element in the dom
+                for (var i = 0;i < elems.length; i++){ 
+                    elems[i].style.fontFamily = "Verdana";
+                }
+            }
+        })
+        dyslexicOn = false;
+        readableOn = true;
+    }else{ //want to turn off friendly font
+        chrome.scripting.executeScript({ 
+            target: {tabId: tab.id},
+            function: () => {
+                let elems = document.querySelectorAll("*");
+                for (var i = 0;i < elems.length; i++){ 
+                    elems[i].style.fontFamily = "";
+                }
+            }
+        })
+        readableOn = false;
     }
 })
