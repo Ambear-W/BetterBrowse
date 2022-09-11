@@ -24,10 +24,14 @@
     "homepage_url": "https://path/to/homepage",
     "incognito": "spanning",
     "offline_enabled": true,
+    "host_permissions": [
+        "<all_urls>"
+    ],
     "permissions": [
         "tabs",
         "activeTab",
         "scripting",
-        "storage"],
+        "storage"
+    ],
     "version_name": "Getting Started!"
   }
