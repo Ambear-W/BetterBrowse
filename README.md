@@ -1,4 +1,4 @@
-# ![BetterBrowse Icon](https://user-images.githubusercontent.com/43912805/189496870-af1c2238-8e70-4fee-a923-adb3679859ad.png) BetterBrowse
+# ![BetterBrowse](https://user-images.githubusercontent.com/43912805/189513816-e68ecfb7-8ff5-44bf-beca-262f1cd039bd.png)
 BetterBrowse is a Google Chrome extension that strives to make the internet a more accessible place; by allowing users to select different options that changes the webpage - making it more accessible.
 
  # Currently, we have the following features:
