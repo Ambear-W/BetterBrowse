@@ -41,6 +41,12 @@ popup.js does all the work for changing the fonts. This was done by checking to 
 By using Azure Cognitive Services, you can get back a lot of different information about an image. For it to work though, you either have to download and directly send the image or send an image's URL.
 For this project, I opted to use JavaScript to grab all the images on a page. There it will run through and find the url (which was challenging since some sites directly links to a photo and others don't). After that is done, it will then send a set of information to the Azure service which will then return a JSON file that contains different information about the images. From there, you just have to add it directly to the alt tag!
 
+I also wanted to point out:
+
+The most important file in all of this is actually the manifest.json!
+Believe it or not almost all web browsers requires this!
+It tells the browser everything it needs to know, from the icons to the premissons that the extension needs!
+
 # Final thoughts
 
 I still want to keep adding more to this! Please feel free to message me with ideas!
