@@ -5,12 +5,13 @@
     "description": "An extension that helps makes a website more accessible for all users",
     "action": {
         "default_popup": "popup/popup.html",
-        "default_icon": "images/128_transparent.png",
-        "icons": {
-            "16": "images/16.png",
-            "48": "images/48.png",
-            "128": "images/128.png"
-        }
+        "default_icon": "images/128_transparent.png"
+    },
+    "icons": {
+        "16": "images/16_transparent.png",
+        "32": "images/48_transparent.png",
+        "48": "images/48_transparent.png",
+        "128": "images/128_transparent.png"
     },
     "background": {
         "service_worker": "background.js",
