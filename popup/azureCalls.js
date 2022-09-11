@@ -1,12 +1,10 @@
 let betterAltsBtn = document.getElementById("betterAlts")
 betterAltsBtn.addEventListener("click", async() =>{
-    alert("clicked!");
     let [tab] = await chrome.tabs.query({active: true, currentWindow:true}) // Find current tab
     chrome.scripting.executeScript({
         target: {tabId: tab.id},
             function: () => {
                 function azureVision(imageUrl, img){
-                    alert("in azure vision");
                     var request = new XMLHttpRequest();
                     request.open('POST', 'https://betterbrowse.cognitiveservices.azure.com/vision/v1.0/describe?maxCandidates=1&language=en', true);
                     request.setRequestHeader('Content-Type', 'application/json');

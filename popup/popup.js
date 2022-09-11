@@ -7,20 +7,32 @@ dylexicBtn.addEventListener("click", async () => {
             target: {tabId: tab.id},
             function: () => {
                 let elems = document.querySelectorAll("*"); // Grab every element in the dom
-                for (var i = 0;i < elems.length; i++){ 
-                    elems[i].style.fontFamily = "Comic Sans MS";
+                for (var i = 0;i < elems.length; i++){
+                    currentStyles = elems[i].style.fontFamily;
+                    if(currentStyles.length === 2 || currentStyles.length === 0){
+                        elems[i].style.fontFamily = "Comic Sans MS" + elems[i].style.fontFamily;
+                    }else{
+                        elems[i].style.fontFamily = "Comic Sans MS, " + elems[i].style.fontFamily;
+                    } 
                 }
             }
         })
         dyslexicOn = true;
-        readableOn = false;
     }else{ //want to turn off friendly font
         chrome.scripting.executeScript({ 
             target: {tabId: tab.id},
             function: () => {
                 let elems = document.querySelectorAll("*");
                 for (var i = 0;i < elems.length; i++){ 
-                    elems[i].style.fontFamily = "";
+                    currentStyles = elems[i].style.fontFamily;
+                    newStyles = currentStyles.replace(/Comic Sans MS, /g,"");
+                    newStyles = currentStyles.replace(/Comic Sans MS/g,"");
+
+                    if(newStyles.length === 2){
+                        elems[i].style.fontFamily = null;
+                    }else{
+                        elems[i].style.fontFamily = newStyles;
+                    }
                 }
             }
         })
@@ -37,12 +49,16 @@ readableBtn.addEventListener("click", async() =>{
             target: {tabId: tab.id},
             function: () => {
                 let elems = document.querySelectorAll("*"); // Grab every element in the dom
-                for (var i = 0;i < elems.length; i++){ 
-                    elems[i].style.fontFamily = "Verdana";
+                for (var i = 0;i < elems.length; i++){
+                    currentStyles = elems[i].style.fontFamily;
+                    if(currentStyles.length === 2 || currentStyles.length === 0){
+                        elems[i].style.fontFamily = "Verdana" + elems[i].style.fontFamily;
+                    }else{
+                        elems[i].style.fontFamily = "Verdana, " + elems[i].style.fontFamily;
+                    } 
                 }
             }
         })
-        dyslexicOn = false;
         readableOn = true;
     }else{ //want to turn off friendly font
         chrome.scripting.executeScript({ 
@@ -50,31 +66,20 @@ readableBtn.addEventListener("click", async() =>{
             function: () => {
                 let elems = document.querySelectorAll("*");
                 for (var i = 0;i < elems.length; i++){ 
-                    elems[i].style.fontFamily = "";
+                    currentStyles = elems[i].style.fontFamily;
+                    newStyles = currentStyles.replace(/Verdana, /g,/Verdana/g, "");
+                    newStyles = currentStyles.replace(/Verdana/g,"");
+
+                    console.log(newStyles.length);
+
+                    if(newStyles.length === 2){
+                        elems[i].style.fontFamily = null;
+                    }else{
+                        elems[i].style.fontFamily = newStyles;
+                    }
                 }
             }
         })
         readableOn = false;
     }
 })
-
-let betterAltsBtn = document.getElementById("betterAlts")
-var betterAlts = false;
-betterAltsBtn.addEventListener("click", async() =>{
-    let [tab] = await chrome.tabs.query({active: true, currentWindow:true})
-    if(betterAlts == false){
-        chrome.scripting.executeScript({
-            target: {tabId: tab.id},
-            function: () => {
-                let imgs = document.getElementsByTagName("img");
-                for (var i = 0; i < imgs.length; i++){
-                    azureVision(imgs[i].src);
-                }
-            }
-        })
-    }
-})
-
-function azureVision(){
-
-}
