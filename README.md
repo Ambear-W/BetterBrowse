@@ -26,6 +26,7 @@ The best way to get it on your computer is to download this repository!
 This is how it should look at the end:
 ![The Google Chrome extension page is open and showcasing developer mode turned on](https://user-images.githubusercontent.com/43912805/189513537-34814255-1d55-4e00-8666-7615836bce2a.png)
 
+Fun fact: The "Inspect views service worker (Inactive)" is actually the console log for the extension! How cool is that?
 
 # How it works
 
