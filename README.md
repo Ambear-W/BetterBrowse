@@ -4,7 +4,7 @@ BetterBrowse is a Google Chrome extension that strives to make the internet a mo
  Currently, we have the following features:
  - Making all font on a page dylexic friendly :D 
  - Change all the font on a page to something more readable
- - 
+ - Adds alt tags or better alt tags to images on page
 
 Right now, BetterBrowse is NOT on the Google Extension store. 
 The best way to get it on your computer is to download this repository! 
