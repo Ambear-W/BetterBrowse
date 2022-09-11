@@ -12,6 +12,10 @@
             "128": "images/128.png"
         }
     },
+    "background": {
+        "service_worker": "background.js",
+        "presistent": "false"
+    },
     "content_scripts" : [
         {
             "matches" : [

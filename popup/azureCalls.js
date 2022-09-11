@@ -1,4 +1,15 @@
-let betterAltsBtn = document.getElementById("betterAlts")
+let betterAltsBtn = document.querySelector('#betterAlts');
+
+chrome.storage.session.get('options', (data) => {
+    Object.assign(options, data.options);
+    betterAltsBtn.checked = Boolean(options.betterAltsBtn);
+});
+
+betterAltsBtn.addEventListener('change', (event) => {
+    options.betterAltsBtn = event.target.checked;
+    chrome.storage.session.set({options});
+});
+
 betterAltsBtn.addEventListener("click", async() =>{
     let [tab] = await chrome.tabs.query({active: true, currentWindow:true}) // Find current tab
     chrome.scripting.executeScript({
